@@ -1,6 +1,6 @@
 class JsonWebToken
   class << self
-    def encode(payload, exp = 24.hours.from.now)
+    def encode(payload, exp = 24.hours.from_now)
       payload[:exp] = exp.to_i
       JWT.encode(payload, Rails.application.secrets.secret_key_base)
     end
@@ -9,7 +9,7 @@ class JsonWebToken
       body = JWT.decode(token, Rails.application.secrets.secret_key_base)[0]
       HashWithIndifferentAccess.new body
     rescue JWT::DecodeError => e
-      raise StandardError.new 'Invalid token'
+      raise StandardError.new e.message
     end
   end
 end
