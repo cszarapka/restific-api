@@ -1,24 +1,40 @@
-# README
+# restific-api
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple Rails API REST service that allows you to register a user and generate unique identifiers.
 
-Things you may want to cover:
+## Getting Started
 
-* Ruby version
+### Prereqs
 
-* System dependencies
+* ruby 2.6.5
+* rails 5.0.7.2
+* postgres (PostgreSQL) 12.2
 
-* Configuration
+### Install
 
-* Database creation
+Clone the repo and install the gems.
 
-* Database initialization
+Create and migrate database (postgresql):
 
-* How to run the test suite
+```
+$ rails db:create
+$ rails db:migrate
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+### Run app
 
-* Deployment instructions
+`rails s`
 
-* ...
+### Run tests
+
+`bundle exec rspec`
+
+## Try it Out
+
+This app is currently deployed on Heroku:
+https://restific-api.herokuapp.com
+
+## API
+
+API Documentation (via Postman)
+https://documenter.getpostman.com/view/11045517/Szf26BLg?version=latest
